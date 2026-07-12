@@ -1,0 +1,17 @@
+{
+  "name": "가상 투자 계획",
+  "short_name": "투자계획",
+  "description": "연금·ISA·증권 계좌를 한눈에 관리하고 장기 자산 성장을 시뮬레이션하는 개인 투자 계획 앱",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e1116",
+  "theme_color": "#0e1116",
+  "lang": "ko",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
