@@ -1,0 +1,62 @@
+name: Build Android APK
+
+# 갤럭시 등 안드로이드에 설치할 .apk 파일을 빌드합니다.
+# 브랜치에 푸시하거나, Actions 탭에서 수동 실행(Run workflow)하면 동작합니다.
+on:
+  push:
+    branches:
+      - claude/virtual-investment-planner-6gdbuw
+    paths:
+      - 'android/**'
+      - 'app-standalone.html'
+      - '.github/workflows/build-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 소스 체크아웃
+        uses: actions/checkout@v4
+
+      - name: JDK 17 설치
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: 최신 앱 번들을 assets 로 동기화
+        run: cp app-standalone.html android/app/src/main/assets/index.html
+
+      - name: Gradle 실행 권한
+        run: chmod +x android/gradlew
+
+      - name: 디버그 APK 빌드
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: APK 이름 변경
+        run: |
+          mkdir -p dist
+          cp android/app/build/outputs/apk/debug/app-debug.apk "dist/가상투자계획.apk"
+          ls -la dist
+
+      - name: 빌드 결과 업로드 (Actions 아티팩트)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 가상투자계획-apk
+          path: dist/가상투자계획.apk
+          if-no-files-found: error
+
+      - name: 릴리스에 APK 첨부 (직접 다운로드용)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create apk-latest --title "가상 투자 계획 (최신 APK)" \
+            --notes "갤럭시 등 안드로이드에 설치하는 앱 파일입니다. 아래 가상투자계획.apk 를 폰에서 받아 설치하세요." \
+            --target "${{ github.sha }}" 2>/dev/null || true
+          gh release upload apk-latest "dist/가상투자계획.apk" --clobber
+          echo "다운로드 페이지: ${{ github.server_url }}/${{ github.repository }}/releases/tag/apk-latest"
