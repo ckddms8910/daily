@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0e1116">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="가상 투자 계획">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMWMyNTM3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBlMTExNiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjMWE0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRmOGNmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPHBhdGggZD0iTTk2IDM0MCBMMjAwIDIzNiBMMjgwIDMwMCBMNDE2IDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2xuKSIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTk2IDM0MCBMMjAwIDIzNiBMMjgwIDMwMCBMNDE2IDE1MCBMNDE2IDM5MiBMOTYgMzkyIFoiIGZpbGw9InVybCgjbG4pIiBvcGFjaXR5PSIwLjE4Ii8+CiAgPGNpcmNsZSBjeD0iNDE2IiBjeT0iMTUwIiByPSIyNiIgZmlsbD0iIzRmOGNmZiIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzNiIgcj0iMjAiIGZpbGw9IiMyMmMxYTQiLz4KPC9zdmc+Cg==">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMWMyNTM3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBlMTExNiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjJjMWE0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRmOGNmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9InVybCgjYmcpIi8+CiAgPHBhdGggZD0iTTk2IDM0MCBMMjAwIDIzNiBMMjgwIDMwMCBMNDE2IDE1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2xuKSIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTk2IDM0MCBMMjAwIDIzNiBMMjgwIDMwMCBMNDE2IDE1MCBMNDE2IDM5MiBMOTYgMzkyIFoiIGZpbGw9InVybCgjbG4pIiBvcGFjaXR5PSIwLjE4Ii8+CiAgPGNpcmNsZSBjeD0iNDE2IiBjeT0iMTUwIiByPSIyNiIgZmlsbD0iIzRmOGNmZiIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIzNiIgcj0iMjAiIGZpbGw9IiMyMmMxYTQiLz4KPC9zdmc+Cg==">
+<title>가상 투자 계획</title>
+<style>
+/* ==========================================================================
+ * 가상 투자 계획 — 스타일 (모바일 우선, 다크 테마)
+ * ========================================================================== */
+:root {
+  --bg: #0e1116;
+  --bg-elev: #161b22;
+  --bg-card: #1a2029;
+  --bg-card2: #212936;
+  --border: #262d3a;
+  --text: #e6edf3;
+  --text-dim: #8b96a5;
+  --text-mute: #5b6675;
+  --accent: #4f8cff;
+  --up: #22c1a4;
+  --down: #ff5d73;
+  --radius: 16px;
+  --nav-h: 62px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+body { max-width: 520px; margin: 0 auto; position: relative; min-height: 100vh; }
+
+.view {
+  padding: 16px 16px calc(var(--nav-h) + var(--safe-b) + 24px);
+  min-height: 100vh;
+}
+
+/* ---- 헤더 ---- */
+.page-head { padding: 8px 2px 14px; }
+.page-head h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+.page-head .sub { color: var(--text-dim); font-size: 13px; margin-top: 3px; }
+
+/* ---- 카드 ---- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.card-head h2, .card-h { font-size: 15px; font-weight: 700; }
+.card-h { margin-bottom: 12px; }
+
+/* ---- 히어로 (대시보드) ---- */
+.hero { background: linear-gradient(160deg, #1c2537, #161b22); }
+.hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.year-select {
+  background: var(--bg-card2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 10px; padding: 7px 10px; font-size: 14px; font-weight: 600;
+  appearance: none; -webkit-appearance: none;
+}
+.chip { background: rgba(79,140,255,0.15); color: var(--accent); padding: 5px 11px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.hero-value { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin: 4px 0 6px; }
+.hero-sub { display: flex; gap: 14px; font-size: 13px; color: var(--text-dim); }
+.hero-sub .up { color: var(--up); font-weight: 600; }
+.hero-sub .down { color: var(--down); font-weight: 600; }
+.chart-wrap { margin: 14px -6px 0; }
+.chart-legend { display: flex; gap: 16px; font-size: 11px; color: var(--text-dim); margin-top: 8px; padding-left: 4px; }
+.chart-legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+.lg-line { background: var(--accent); }
+.lg-retire { background: #ffcb2d; height: 10px !important; width: 2px !important; }
+
+/* ---- 차트 SVG ---- */
+.chart { width: 100%; height: auto; display: block; }
+.chart .grid { stroke: var(--border); stroke-width: 1; }
+.chart .gridlbl { fill: var(--text-mute); font-size: 9px; }
+.chart .xlbl { fill: var(--text-dim); font-size: 10px; text-anchor: middle; }
+.chart .retire { stroke: #ffcb2d; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.chart-card { padding: 14px 8px; }
+
+/* ---- 통계 그리드 ---- */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.stat { padding: 14px; }
+.stat-lbl { font-size: 12px; color: var(--text-dim); }
+.stat-num { display: block; font-size: 22px; font-weight: 800; margin: 6px 0 3px; letter-spacing: -0.5px; }
+.stat small { color: var(--text-mute); font-size: 11px; }
+
+/* ---- 도넛 + 자산 리스트 ---- */
+.donut-wrap { display: flex; gap: 14px; align-items: center; }
+.donut-box { position: relative; flex: 0 0 auto; width: 140px; height: 140px; }
+.donut { width: 140px; height: 140px; }
+.donut-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.donut-center small { color: var(--text-dim); font-size: 11px; }
+.donut-center b { font-size: 15px; font-weight: 800; }
+.asset-list { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 11px; }
+.asset-row { display: flex; align-items: center; gap: 9px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.asset-meta { flex: 1; min-width: 0; }
+.asset-name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.asset-name small { color: var(--text-mute); font-weight: 400; font-size: 11px; }
+.bar { height: 4px; background: var(--bg-card2); border-radius: 3px; margin-top: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: 3px; }
+.asset-val { text-align: right; flex: 0 0 auto; }
+.asset-val b { font-size: 13px; font-weight: 700; }
+.asset-val small { display: block; color: var(--text-mute); font-size: 10px; }
+
+/* ---- 계좌 카드 ---- */
+.type-section { margin-bottom: 18px; }
+.type-title { font-size: 13px; color: var(--text-dim); font-weight: 700; margin: 0 2px 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.acc-card {
+  width: 100%; display: flex; align-items: center; gap: 12px; text-align: left;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 14px; margin-bottom: 9px; color: var(--text); cursor: pointer;
+  transition: transform 0.08s, background 0.15s;
+}
+.acc-card:active { transform: scale(0.98); background: var(--bg-card2); }
+.acc-color { width: 6px; align-self: stretch; border-radius: 4px; flex: 0 0 auto; }
+.acc-info { flex: 1; min-width: 0; }
+.acc-title { font-size: 15px; font-weight: 700; }
+.acc-desc { font-size: 12px; color: var(--text-dim); margin-top: 3px; }
+.acc-vals { text-align: right; flex: 0 0 auto; }
+.acc-vals b { font-size: 15px; font-weight: 800; }
+.acc-vals small { display: block; color: var(--text-mute); font-size: 11px; margin-top: 2px; }
+
+/* ---- 버튼 ---- */
+.btn-primary, .btn-ghost, .btn-danger {
+  width: 100%; padding: 14px; border-radius: 13px; font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; margin-top: 6px; font-family: inherit;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:active { background: #3d78e8; }
+.btn-ghost { background: var(--bg-card2); color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:active { background: #2a3444; }
+.btn-danger { background: transparent; color: var(--down); border: 1px solid rgba(255,93,115,0.3); }
+
+/* ---- 계획 테이블 ---- */
+.table-card { padding: 4px 0; overflow: hidden; }
+.plan-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.plan-table th { color: var(--text-dim); font-weight: 600; font-size: 11px; padding: 10px 8px; text-align: right; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg-card); }
+.plan-table th:first-child { text-align: left; }
+.plan-table td { padding: 9px 8px; text-align: right; border-bottom: 1px solid rgba(38,45,58,0.5); }
+.plan-table .c-year { text-align: left; font-weight: 600; }
+.plan-table .c-year small { display: block; color: var(--text-mute); font-size: 10px; font-weight: 400; }
+.plan-table .c-value { font-weight: 700; color: var(--text); }
+.plan-table .c-growth { color: var(--up); }
+.plan-table .c-contrib.neg { color: var(--down); }
+.plan-table .retire-row { background: rgba(255,203,45,0.08); }
+.plan-table .retire-row .c-year { color: #ffcb2d; }
+
+/* ---- 폼 ---- */
+.form .field { display: block; margin-bottom: 13px; }
+.field span { display: block; font-size: 12px; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+.field input, .field select {
+  width: 100%; background: var(--bg-card2); border: 1px solid var(--border); border-radius: 11px;
+  padding: 12px; color: var(--text); font-size: 15px; font-family: inherit; appearance: none; -webkit-appearance: none;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* ---- 모달 ---- */
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 100;
+  display: flex; align-items: flex-end; justify-content: center; backdrop-filter: blur(2px);
+  animation: fade 0.15s;
+}
+@keyframes fade { from { opacity: 0; } }
+.modal {
+  background: var(--bg-elev); width: 100%; max-width: 520px; max-height: 92vh;
+  border-radius: 22px 22px 0 0; display: flex; flex-direction: column;
+  animation: slideup 0.22s cubic-bezier(0.2,0.8,0.2,1);
+}
+@keyframes slideup { from { transform: translateY(100%); } }
+.modal-head { display: flex; align-items: center; gap: 10px; padding: 16px 18px 8px; }
+.modal-head h2 { flex: 1; font-size: 18px; font-weight: 800; text-align: center; }
+.modal-x, .modal-del { background: none; border: none; color: var(--text-dim); font-size: 16px; cursor: pointer; }
+.modal-x { width: 32px; }
+.modal-del { color: var(--down); font-weight: 600; font-size: 14px; }
+.modal-body { padding: 8px 18px; overflow-y: auto; flex: 1; }
+.modal-foot { padding: 12px 18px calc(16px + var(--safe-b)); border-top: 1px solid var(--border); }
+
+.color-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.swatch { width: 30px; height: 30px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; }
+.swatch.sel { border-color: #fff; transform: scale(1.1); }
+
+.ov-section { margin-top: 8px; border-top: 1px solid var(--border); padding-top: 14px; }
+.ov-head { display: flex; justify-content: space-between; align-items: center; }
+.ov-head h3 { font-size: 14px; font-weight: 700; }
+.ov-add { background: rgba(79,140,255,0.15); color: var(--accent); border: none; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; }
+.ov-hint, .ov-empty { font-size: 11px; color: var(--text-mute); margin: 5px 0 10px; }
+.ov-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 6px; margin-bottom: 6px; align-items: center; }
+.ov-row input { background: var(--bg-card2); border: 1px solid var(--border); border-radius: 8px; padding: 9px 8px; color: var(--text); font-size: 13px; width: 100%; }
+.ov-row .ov-note { grid-column: 1 / -1; }
+.ov-del { background: none; border: none; color: var(--down); font-size: 14px; cursor: pointer; padding: 4px; }
+
+.preview { background: var(--bg-card2); border-radius: 12px; padding: 12px 14px; margin-top: 16px; }
+.pv-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; }
+.pv-row span { color: var(--text-dim); }
+.pv-row b { font-weight: 700; }
+
+/* ---- 기타 ---- */
+.note { font-size: 12px; color: var(--text-mute); line-height: 1.6; margin: 10px 4px; }
+.ver { text-align: center; color: var(--text-mute); font-size: 11px; margin-top: 20px; }
+.empty { text-align: center; color: var(--text-mute); padding: 30px; }
+
+/* ---- 하단 네비 ---- */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 520px; height: calc(var(--nav-h) + var(--safe-b));
+  padding-bottom: var(--safe-b);
+  background: rgba(22,27,34,0.92); backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border); display: flex; z-index: 50;
+}
+.nav-item {
+  flex: 1; background: none; border: none; color: var(--text-mute);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  font-size: 10px; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.nav-item svg { width: 22px; height: 22px; fill: currentColor; }
+.nav-item.active { color: var(--accent); }
+
+/* ---- 토스트 ---- */
+#toast {
+  position: fixed; bottom: calc(var(--nav-h) + var(--safe-b) + 16px); left: 50%; transform: translateX(-50%) translateY(20px);
+  background: #2a3444; color: #fff; padding: 11px 20px; border-radius: 24px; font-size: 14px; font-weight: 600;
+  opacity: 0; pointer-events: none; transition: all 0.25s; z-index: 200; white-space: nowrap;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+</style>
+</head>
+<body>
+
+  <main id="view" class="view"></main>
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-route="dashboard">
+      <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9zm0 7h6v-5H4v5zm10 0h6V11h-6v9zm0-16v5h6V4h-6z"/></svg><span>대시보드</span>
+    </button>
+    <button class="nav-item" data-route="accounts">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg><span>계좌</span>
+    </button>
+    <button class="nav-item" data-route="plan">
+      <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8-1.4-1.4L13 12l-4-4-7 7z"/></svg><span>계획</span>
+    </button>
+    <button class="nav-item" data-route="settings">
+      <svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.9 4a7 7 0 00-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 00-1.7-1l-.3-2.5H9.6l-.4 2.5a7 7 0 00-1.7 1l-2.3-1-2 3.4L5.2 11a7 7 0 000 2l-2 1.5 2 3.4 2.3-1a7 7 0 001.7 1l.4 2.5h4.8l.3-2.5a7 7 0 001.7-1l2.3 1 2-3.4-2-1.5c.1-.3.1-.6.1-1z"/></svg><span>설정</span>
+    </button>
+  </nav>
+<script>
+/* ==========================================================================
+ * 유틸리티: 숫자 포맷 (한국식 억/만), SVG 차트 렌더러
+ * ========================================================================== */
+
+/* 1,234,567 형태 */
+function comma(n) {
+  if (n == null || isNaN(n)) return '0';
+  return Math.round(n).toLocaleString('ko-KR');
+}
+
+/* 큰 금액을 억/만 단위 한글로 요약: 1234567890 -> "12억 3,456만" */
+function won(n) {
+  if (n == null || isNaN(n)) return '0원';
+  const neg = n < 0;
+  n = Math.abs(Math.round(n));
+  if (n === 0) return '0원';
+
+  const jo = Math.floor(n / 1_0000_0000_0000);
+  const eok = Math.floor((n % 1_0000_0000_0000) / 1_0000_0000);
+  const man = Math.floor((n % 1_0000_0000) / 1_0000);
+  const rest = n % 1_0000;
+
+  const parts = [];
+  if (jo) parts.push(jo.toLocaleString('ko-KR') + '조');
+  if (eok) parts.push(eok.toLocaleString('ko-KR') + '억');
+  if (man) parts.push(man.toLocaleString('ko-KR') + '만');
+  if (!jo && !eok && !man && rest) parts.push(rest.toLocaleString('ko-KR'));
+  let s = parts.slice(0, 2).join(' ') + '원';
+  return (neg ? '-' : '') + s;
+}
+
+/* 짧은 축약: 1.2억, 3,400만, 12조 (차트 축/카드용) */
+function wonShort(n) {
+  if (n == null || isNaN(n)) return '0';
+  const neg = n < 0;
+  n = Math.abs(n);
+  let s;
+  if (n >= 1_0000_0000_0000) s = (n / 1_0000_0000_0000).toFixed(1).replace(/\.0$/, '') + '조';
+  else if (n >= 1_0000_0000) s = (n / 1_0000_0000).toFixed(1).replace(/\.0$/, '') + '억';
+  else if (n >= 1_0000) s = Math.round(n / 1_0000).toLocaleString('ko-KR') + '만';
+  else s = Math.round(n).toString();
+  return (neg ? '-' : '') + s;
+}
+
+function pct(n) {
+  if (n == null || isNaN(n)) return '0%';
+  return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+}
+
+/* ---- SVG 라인/영역 차트 ---------------------------------------------------
+ * series: [{year, value}]  누적 자산 곡선
+ * -------------------------------------------------------------------------- */
+function areaChart(series, opts = {}) {
+  const W = opts.w || 340, H = opts.h || 180;
+  const padL = 8, padR = 8, padT = 16, padB = 22;
+  const iw = W - padL - padR, ih = H - padT - padB;
+  if (!series.length) return '';
+
+  const xs = series.map((d) => d.year);
+  const ys = series.map((d) => d.value);
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  const maxY = Math.max(...ys, 1);
+  const minY = 0;
+
+  const X = (x) => padL + ((x - minX) / (maxX - minX || 1)) * iw;
+  const Y = (y) => padT + ih - ((y - minY) / (maxY - minY || 1)) * ih;
+
+  let line = '', area = '';
+  series.forEach((d, i) => {
+    const px = X(d.year).toFixed(1), py = Y(d.value).toFixed(1);
+    line += (i === 0 ? 'M' : 'L') + px + ' ' + py + ' ';
+  });
+  area = line + `L${X(maxX).toFixed(1)} ${(padT + ih).toFixed(1)} L${X(minX).toFixed(1)} ${(padT + ih).toFixed(1)} Z`;
+
+  // y 그리드 3줄
+  let grid = '';
+  for (let g = 1; g <= 3; g++) {
+    const gy = padT + (ih / 4) * g;
+    const gv = maxY * (1 - g / 4);
+    grid += `<line x1="${padL}" y1="${gy}" x2="${W - padR}" y2="${gy}" class="grid"/>`;
+    grid += `<text x="${padL}" y="${gy - 3}" class="gridlbl">${wonShort(gv)}</text>`;
+  }
+
+  // x 라벨 (시작, 중간, 끝, 은퇴)
+  const marks = opts.marks || [minX, Math.round((minX + maxX) / 2), maxX];
+  let xlbl = '';
+  marks.forEach((yr) => {
+    if (yr < minX || yr > maxX) return;
+    xlbl += `<text x="${X(yr).toFixed(1)}" y="${H - 6}" class="xlbl">${yr}</text>`;
+  });
+
+  // 은퇴 마커
+  let retire = '';
+  if (opts.retireYear && opts.retireYear >= minX && opts.retireYear <= maxX) {
+    const rx = X(opts.retireYear).toFixed(1);
+    retire = `<line x1="${rx}" y1="${padT}" x2="${rx}" y2="${padT + ih}" class="retire"/>`;
+  }
+
+  const color = opts.color || '#4f8cff';
+  const gid = 'g' + Math.random().toString(36).slice(2, 7);
+  return `<svg viewBox="0 0 ${W} ${H}" class="chart" preserveAspectRatio="none">
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${color}" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="${color}" stop-opacity="0"/>
+    </linearGradient></defs>
+    ${grid}${retire}
+    <path d="${area}" fill="url(#${gid})"/>
+    <path d="${line}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>
+    ${xlbl}
+  </svg>`;
+}
+
+/* ---- 도넛(비중) 차트 ------------------------------------------------------ */
+function donutChart(items, opts = {}) {
+  const size = opts.size || 150, r = size / 2 - 12, cx = size / 2, cy = size / 2;
+  const total = items.reduce((s, it) => s + Math.max(0, it.value), 0) || 1;
+  let a0 = -Math.PI / 2;
+  let paths = '';
+  items.forEach((it) => {
+    const frac = Math.max(0, it.value) / total;
+    if (frac <= 0) return;
+    const a1 = a0 + frac * Math.PI * 2;
+    const large = frac > 0.5 ? 1 : 0;
+    const x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0);
+    const x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
+    paths += `<path d="M${cx} ${cy} L${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(2)} ${y1.toFixed(2)} Z" fill="${it.color}" stroke="var(--bg-card)" stroke-width="2"/>`;
+    a0 = a1;
+  });
+  const innerR = r * 0.6;
+  return `<svg viewBox="0 0 ${size} ${size}" class="donut">
+    ${paths}
+    <circle cx="${cx}" cy="${cy}" r="${innerR}" fill="var(--bg-card)"/>
+  </svg>`;
+}
+
+function el(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstElementChild;
+}
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+
+/* ==========================================================================
+ * 가상 투자 계획 — 데이터 저장소 & 시뮬레이션 엔진
+ * 순수 바닐라 JS. localStorage 에 모든 데이터 보관 (오프라인 동작).
+ * ========================================================================== */
+
+const STORE_KEY = 'vip.data.v1';
+
+/* ---- 기본(시드) 데이터: 사용자의 ISA 엑셀 계획을 반영 ---------------------- */
+function seedData() {
+  return {
+    settings: {
+      startYear: 2026,
+      endYear: 2071,        // 시뮬레이션 종료 연도
+      retireYear: 2048,     // 은퇴(퇴직) 연도
+      birthYear: 1991,      // 나이 표시용 (60세 = 2051 근처)
+      currency: '원',
+    },
+    accounts: [
+      {
+        id: 'acc_pensionA',
+        name: '연금계좌A',
+        asset: 'S&P500',
+        type: '연금',
+        color: '#4f8cff',
+        startYear: 2026,
+        initial: 4538160,          // 2026 예상 평가금액
+        growth: 8,                 // 연 성장률 %
+        monthly: 200000,           // 기본 월 납입
+        overrides: [
+          { year: 2030, monthly: 260000, note: '' },
+          { year: 2034, monthly: 400000, note: '' },
+          { year: 2036, monthly: 500000, note: '' },
+          { year: 2047, lump: -15000000, monthly: 0, note: '1,500만 원 출금 + B로 이전' },
+        ],
+      },
+      {
+        id: 'acc_pensionB',
+        name: '연금계좌B',
+        asset: 'S&P500',
+        type: '연금',
+        color: '#22c1a4',
+        startYear: 2026,
+        initial: 120000,
+        growth: 7,
+        monthly: 10000,
+        overrides: [
+          { year: 2041, monthly: 1000000, note: '월 100만원 납입' },
+          { year: 2046, monthly: 1500000, note: '월 150만원 납입' },
+          { year: 2062, lump: 3000000000, monthly: 0, note: 'ISA 만기금 30억 추가' },
+        ],
+      },
+      {
+        id: 'acc_isa',
+        name: 'ISA',
+        asset: '나스닥',
+        type: 'ISA',
+        color: '#ff8c42',
+        startYear: 2026,
+        initial: 2970900,
+        growth: 10,
+        monthly: 300000,
+        overrides: [
+          { year: 2029, monthly: 2000000, note: '월 200만원' },
+          { year: 2034, monthly: 2400000, lump: 20000000, note: '월 240만 + 내일적금 2천만' },
+          { year: 2040, monthly: 3100000, note: '월 310만원' },
+          { year: 2041, monthly: 0, note: '납입 종료 (거치)' },
+          { year: 2061, lump: 0, monthly: 0, note: 'ISA 해지' },
+        ],
+      },
+      {
+        id: 'acc_secGOOG',
+        name: '증권-GOOG',
+        asset: '구글',
+        type: '증권',
+        color: '#a06bff',
+        startYear: 2026,
+        initial: 313500,
+        growth: 10,
+        monthly: 31250,
+        overrides: [],
+      },
+      {
+        id: 'acc_secTSLA',
+        name: '증권-TSLA',
+        asset: '테슬라',
+        type: '증권',
+        color: '#ff5d73',
+        startYear: 2026,
+        initial: 318000,
+        growth: 10,
+        monthly: 31250,
+        overrides: [],
+      },
+      {
+        id: 'acc_secSPACEX',
+        name: '증권-SpaceX',
+        asset: 'SpaceX',
+        type: '증권',
+        color: '#3ec7ff',
+        startYear: 2026,
+        initial: 192000,
+        growth: 10,
+        monthly: 31250,
+        overrides: [],
+      },
+    ],
+  };
+}
+
+/* ---- 로드 / 저장 --------------------------------------------------------- */
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (!raw) {
+      const d = seedData();
+      saveData(d);
+      return d;
+    }
+    const d = JSON.parse(raw);
+    // 방어적 기본값 채우기
+    d.settings = Object.assign(seedData().settings, d.settings || {});
+    d.accounts = (d.accounts || []).map(normalizeAccount);
+    return d;
+  } catch (e) {
+    console.error('데이터 로드 실패, 초기화합니다', e);
+    const d = seedData();
+    saveData(d);
+    return d;
+  }
+}
+
+function saveData(d) {
+  localStorage.setItem(STORE_KEY, JSON.stringify(d));
+}
+
+function normalizeAccount(a) {
+  return Object.assign({
+    id: a.id || uid(),
+    name: '새 계좌',
+    asset: '',
+    type: '기타',
+    color: '#4f8cff',
+    startYear: 2026,
+    initial: 0,
+    growth: 8,
+    monthly: 0,
+    overrides: [],
+  }, a);
+}
+
+function uid() {
+  return 'acc_' + Math.random().toString(36).slice(2, 9);
+}
+
+/* ==========================================================================
+ * 시뮬레이션 엔진
+ *  - 매년: 평가액 = 이전 * (1+성장률) + (월납입 * 12) + 일시금(lump)
+ *  - 월납입 복리 근사를 위해 연 성장의 절반을 납입금에 적용
+ *  - override 로 해당 연도의 월납입/일시금을 지정 (음수 = 출금)
+ * ========================================================================== */
+function projectAccount(acc, startYear, endYear) {
+  const rows = [];
+  let value = 0;
+  let curMonthly = acc.monthly || 0;
+  let principal = 0; // 누적 원금(순납입)
+
+  // override 를 연도별 맵으로
+  const ovMap = {};
+  (acc.overrides || []).forEach((o) => { ovMap[o.year] = o; });
+
+  for (let year = startYear; year <= endYear; year++) {
+    if (year < acc.startYear) {
+      rows.push({ year, value: 0, contribution: 0, growth: 0, principal: 0, note: '' });
+      continue;
+    }
+
+    let note = '';
+    let lump = 0;
+
+    // override 적용 (해당 연도부터 월납입 변경 / 일시금)
+    if (ovMap[year]) {
+      const o = ovMap[year];
+      if (typeof o.monthly === 'number') curMonthly = o.monthly;
+      if (typeof o.lump === 'number') lump = o.lump;
+      note = o.note || '';
+    }
+
+    // 시작 연도: 초기 평가액을 그해 말 평가액으로 사용 (엑셀과 동일)
+    if (year === acc.startYear) {
+      value = acc.initial || 0;
+      principal = acc.initial || 0;
+      rows.push({
+        year, value, contribution: acc.initial || 0, monthly: curMonthly,
+        lump: 0, growth: 0, principal, note,
+      });
+      continue;
+    }
+
+    const annualContribution = curMonthly * 12;
+    const startValue = value;
+
+    // 평가액 = 이전 * (1+성장률) + 연납입 + 일시금  (엑셀 모델)
+    const growthAmt = startValue * (acc.growth / 100);
+    value = startValue + growthAmt + annualContribution + lump;
+    if (value < 0) value = 0;
+
+    principal += annualContribution + lump;
+
+    rows.push({
+      year,
+      value,
+      contribution: annualContribution + lump,
+      monthly: curMonthly,
+      lump,
+      growth: growthAmt,
+      principal,
+      note,
+    });
+  }
+  return rows;
+}
+
+/* 전체 포트폴리오: 계좌별 projection 합산 */
+function projectPortfolio(data) {
+  const { startYear, endYear } = data.settings;
+  const perAccount = {};
+  data.accounts.forEach((a) => {
+    perAccount[a.id] = projectAccount(a, startYear, endYear);
+  });
+
+  const totals = [];
+  for (let i = 0, year = startYear; year <= endYear; year++, i++) {
+    let value = 0, contribution = 0, principal = 0, growth = 0;
+    data.accounts.forEach((a) => {
+      const r = perAccount[a.id][i];
+      value += r.value;
+      contribution += r.contribution;
+      principal += r.principal;
+      growth += r.growth;
+    });
+    totals.push({ year, value, contribution, principal, growth });
+  }
+  return { perAccount, totals };
+}
+
+/* 특정 연도의 계좌별 스냅샷 */
+function snapshotAt(data, year) {
+  const { startYear, endYear } = data.settings;
+  const idx = year - startYear;
+  const proj = projectPortfolio(data);
+  const items = data.accounts.map((a) => {
+    const rows = proj.perAccount[a.id];
+    const r = rows[Math.max(0, Math.min(idx, rows.length - 1))];
+    return { account: a, value: r ? r.value : 0, row: r };
+  });
+  const total = items.reduce((s, it) => s + it.value, 0);
+  return { items, total, year, proj };
+}
+
+/* ==========================================================================
+ * 가상 투자 계획 — 앱 로직 / 라우터 / 뷰 렌더링
+ * ========================================================================== */
+
+let DATA = loadData();
+let CURRENT = 'dashboard';
+let DASH_YEAR = null; // 대시보드에서 선택한 연도
+
+const app = () => document.getElementById('view');
+
+function save() { saveData(DATA); }
+
+/* ---- 라우터 -------------------------------------------------------------- */
+function navigate(route) {
+  CURRENT = route;
+  document.querySelectorAll('.nav-item').forEach((b) => {
+    b.classList.toggle('active', b.dataset.route === route);
+  });
+  render();
+}
+
+function render() {
+  const v = app();
+  v.scrollTop = 0;
+  if (CURRENT === 'dashboard') v.innerHTML = viewDashboard();
+  else if (CURRENT === 'accounts') v.innerHTML = viewAccounts();
+  else if (CURRENT === 'plan') v.innerHTML = viewPlan();
+  else if (CURRENT === 'settings') v.innerHTML = viewSettings();
+  bindView();
+}
+
+/* ==========================================================================
+ * 1. 대시보드
+ * ========================================================================== */
+function viewDashboard() {
+  const s = DATA.settings;
+  const proj = projectPortfolio(DATA);
+  const totals = proj.totals;
+  const nowYear = new Date().getFullYear();
+  const year = DASH_YEAR || Math.max(s.startYear, Math.min(nowYear, s.endYear));
+  const snap = snapshotAt(DATA, year);
+
+  const endRow = totals[totals.length - 1];
+  const retireIdx = Math.max(0, Math.min(s.retireYear - s.startYear, totals.length - 1));
+  const retireRow = totals[retireIdx];
+
+  // 선택 연도 카드
+  const curRow = totals[Math.max(0, Math.min(year - s.startYear, totals.length - 1))];
+  const gainPct = curRow.principal > 0 ? ((curRow.value - curRow.principal) / curRow.principal) * 100 : 0;
+
+  // 연도 선택 슬라이더 옵션
+  const age = s.birthYear ? (year - s.birthYear) : null;
+
+  let yearOptions = '';
+  for (let y = s.startYear; y <= s.endYear; y++) {
+    yearOptions += `<option value="${y}" ${y === year ? 'selected' : ''}>${y}년${s.birthYear ? ' · ' + (y - s.birthYear) + '세' : ''}</option>`;
+  }
+
+  // 계좌별 리스트
+  const items = snap.items.slice().sort((a, b) => b.value - a.value);
+  const donutItems = items.map((it) => ({ value: it.value, color: it.account.color }));
+
+  let accRows = items.map((it) => {
+    const frac = snap.total > 0 ? (it.value / snap.total) * 100 : 0;
+    return `<div class="asset-row">
+      <span class="dot" style="background:${it.account.color}"></span>
+      <div class="asset-meta">
+        <div class="asset-name">${esc(it.account.name)} <small>${esc(it.account.asset)}</small></div>
+        <div class="bar"><i style="width:${frac.toFixed(1)}%;background:${it.account.color}"></i></div>
+      </div>
+      <div class="asset-val">
+        <b>${wonShort(it.value)}</b>
+        <small>${frac.toFixed(1)}%</small>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `
+  <header class="page-head">
+    <h1>대시보드</h1>
+    <p class="sub">${s.startYear} → ${s.endYear} · 목표 자산 로드맵</p>
+  </header>
+
+  <div class="hero card">
+    <div class="hero-top">
+      <select id="dashYear" class="year-select">${yearOptions}</select>
+      ${age != null ? `<span class="chip">${age}세</span>` : ''}
+    </div>
+    <div class="hero-value">${won(curRow.value)}</div>
+    <div class="hero-sub">
+      <span>총 원금 ${wonShort(curRow.principal)}</span>
+      <span class="${gainPct >= 0 ? 'up' : 'down'}">평가수익 ${pct(gainPct)}</span>
+    </div>
+    <div class="chart-wrap">
+      ${areaChart(totals.map((t) => ({ year: t.year, value: t.value })), {
+        w: 340, h: 170, color: '#4f8cff', retireYear: s.retireYear,
+        marks: [s.startYear, s.retireYear, s.endYear],
+      })}
+    </div>
+    <div class="chart-legend">
+      <span><i class="lg-line"></i> 총 자산</span>
+      <span><i class="lg-retire"></i> 은퇴 ${s.retireYear}</span>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="card stat">
+      <span class="stat-lbl">은퇴 시점 (${s.retireYear})</span>
+      <b class="stat-num">${wonShort(retireRow.value)}</b>
+      <small>월 ${wonShort(estMonthlyWithdraw(retireRow.value))} 인출 가능</small>
+    </div>
+    <div class="card stat">
+      <span class="stat-lbl">최종 (${s.endYear})</span>
+      <b class="stat-num">${wonShort(endRow.value)}</b>
+      <small>원금 대비 ${endRow.principal > 0 ? (endRow.value / endRow.principal).toFixed(1) : 0}배</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2>자산 구성 · ${year}년</h2></div>
+    <div class="donut-wrap">
+      <div class="donut-box">
+        ${donutChart(donutItems, { size: 140 })}
+        <div class="donut-center">
+          <small>합계</small>
+          <b>${wonShort(snap.total)}</b>
+        </div>
+      </div>
+      <div class="asset-list">${accRows || '<p class="empty">계좌가 없습니다</p>'}</div>
+    </div>
+  </div>
+
+  <button class="btn-ghost" onclick="navigate('plan')">📈 연도별 상세 계획 보기</button>
+  `;
+}
+
+function estMonthlyWithdraw(value) {
+  // 연 4% 룰 기준 월 인출 가능액
+  return (value * 0.04) / 12;
+}
+
+/* ==========================================================================
+ * 2. 계좌 목록
+ * ========================================================================== */
+function viewAccounts() {
+  const s = DATA.settings;
+  const snap = snapshotAt(DATA, new Date().getFullYear());
+  const byType = {};
+  DATA.accounts.forEach((a) => {
+    (byType[a.type] = byType[a.type] || []).push(a);
+  });
+
+  let sections = Object.keys(byType).map((type) => {
+    const rows = byType[type].map((a) => {
+      const proj = projectAccount(a, s.startYear, s.endYear);
+      const last = proj[proj.length - 1];
+      const cur = proj[Math.max(0, Math.min(new Date().getFullYear() - s.startYear, proj.length - 1))];
+      return `<button class="acc-card" onclick="editAccount('${a.id}')">
+        <span class="acc-color" style="background:${a.color}"></span>
+        <div class="acc-info">
+          <div class="acc-title">${esc(a.name)}</div>
+          <div class="acc-desc">${esc(a.asset || type)} · 월 ${wonShort(a.monthly)} · 연 ${a.growth}%</div>
+        </div>
+        <div class="acc-vals">
+          <b>${wonShort(cur.value)}</b>
+          <small>→ ${wonShort(last.value)}</small>
+        </div>
+      </button>`;
+    }).join('');
+    return `<div class="type-section"><h2 class="type-title">${esc(type)}</h2>${rows}</div>`;
+  }).join('');
+
+  return `
+  <header class="page-head">
+    <h1>계좌</h1>
+    <p class="sub">총 ${DATA.accounts.length}개 · 현재 평가액 ${won(snap.total)}</p>
+  </header>
+  ${sections || '<p class="empty">계좌를 추가해 보세요</p>'}
+  <button class="btn-primary" onclick="editAccount(null)">+ 계좌 추가</button>
+  `;
+}
+
+/* ==========================================================================
+ * 3. 연도별 계획 (시뮬레이션 테이블)
+ * ========================================================================== */
+function viewPlan() {
+  const s = DATA.settings;
+  const proj = projectPortfolio(DATA);
+  const totals = proj.totals;
+
+  let rows = totals.map((t) => {
+    const isRetire = t.year === s.retireYear;
+    const age = s.birthYear ? (t.year - s.birthYear) : '';
+    return `<tr class="${isRetire ? 'retire-row' : ''}">
+      <td class="c-year">${t.year}<small>${age ? age + '세' : ''}</small></td>
+      <td class="c-contrib ${t.contribution < 0 ? 'neg' : ''}">${t.contribution >= 0 ? '' : ''}${wonShort(t.contribution)}</td>
+      <td class="c-growth">${wonShort(t.growth)}</td>
+      <td class="c-value">${wonShort(t.value)}</td>
+    </tr>`;
+  }).join('');
+
+  return `
+  <header class="page-head">
+    <h1>연도별 계획</h1>
+    <p class="sub">계좌 합산 시뮬레이션 · 성장률 복리 반영</p>
+  </header>
+
+  <div class="card chart-card">
+    ${areaChart(totals.map((t) => ({ year: t.year, value: t.value })), {
+      w: 340, h: 160, color: '#22c1a4', retireYear: s.retireYear,
+      marks: [s.startYear, s.retireYear, s.endYear],
+    })}
+  </div>
+
+  <div class="card table-card">
+    <table class="plan-table">
+      <thead><tr>
+        <th>연도</th><th>순납입</th><th>성장</th><th>평가액</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>
+  <p class="note">💡 계좌 화면에서 각 계좌의 월 납입·성장률·출금 계획을 수정하면 이 표가 즉시 반영됩니다.</p>
+  `;
+}
+
+/* ==========================================================================
+ * 4. 설정
+ * ========================================================================== */
+function viewSettings() {
+  const s = DATA.settings;
+  return `
+  <header class="page-head">
+    <h1>설정</h1>
+    <p class="sub">시뮬레이션 기간 · 데이터 관리</p>
+  </header>
+
+  <div class="card form">
+    <label class="field">
+      <span>시작 연도</span>
+      <input type="number" id="setStart" value="${s.startYear}">
+    </label>
+    <label class="field">
+      <span>종료 연도</span>
+      <input type="number" id="setEnd" value="${s.endYear}">
+    </label>
+    <label class="field">
+      <span>은퇴(퇴직) 연도</span>
+      <input type="number" id="setRetire" value="${s.retireYear}">
+    </label>
+    <label class="field">
+      <span>출생 연도 (나이 표시)</span>
+      <input type="number" id="setBirth" value="${s.birthYear || ''}">
+    </label>
+    <button class="btn-primary" onclick="saveSettings()">저장</button>
+  </div>
+
+  <div class="card form">
+    <h2 class="card-h">데이터</h2>
+    <button class="btn-ghost" onclick="exportData()">⬇️ 백업 내보내기 (JSON)</button>
+    <button class="btn-ghost" onclick="document.getElementById('importFile').click()">⬆️ 백업 불러오기</button>
+    <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
+    <button class="btn-danger" onclick="resetData()">초기 데이터로 재설정</button>
+  </div>
+
+  <p class="note">모든 데이터는 이 휴대폰에만 저장됩니다. 앱을 홈 화면에 추가하면 오프라인에서도 사용할 수 있어요.</p>
+  <p class="ver">가상 투자 계획 v1.0</p>
+  `;
+}
+
+function saveSettings() {
+  DATA.settings.startYear = +document.getElementById('setStart').value || 2026;
+  DATA.settings.endYear = +document.getElementById('setEnd').value || 2071;
+  DATA.settings.retireYear = +document.getElementById('setRetire').value || 2048;
+  DATA.settings.birthYear = +document.getElementById('setBirth').value || null;
+  if (DATA.settings.endYear <= DATA.settings.startYear) DATA.settings.endYear = DATA.settings.startYear + 30;
+  save();
+  toast('설정이 저장되었습니다');
+  navigate('dashboard');
+}
+
+/* ==========================================================================
+ * 계좌 편집 모달
+ * ========================================================================== */
+function editAccount(id) {
+  const isNew = !id;
+  const acc = isNew ? normalizeAccount({ id: uid(), name: '', startYear: DATA.settings.startYear })
+    : DATA.accounts.find((a) => a.id === id);
+  const draft = JSON.parse(JSON.stringify(acc));
+
+  const modal = el(`<div class="modal-backdrop"><div class="modal"></div></div>`);
+  document.body.appendChild(modal);
+  const box = modal.querySelector('.modal');
+
+  function renderModal() {
+    const ovRows = (draft.overrides || []).map((o, i) => `
+      <div class="ov-row">
+        <input type="number" placeholder="연도" value="${o.year ?? ''}" data-ov="${i}" data-k="year">
+        <input type="number" placeholder="월납입" value="${o.monthly ?? ''}" data-ov="${i}" data-k="monthly">
+        <input type="number" placeholder="일시금(±)" value="${o.lump ?? ''}" data-ov="${i}" data-k="lump">
+        <button class="ov-del" data-del="${i}">✕</button>
+        <input type="text" class="ov-note" placeholder="메모 (예: 1500만 출금)" value="${esc(o.note || '')}" data-ov="${i}" data-k="note">
+      </div>`).join('');
+
+    box.innerHTML = `
+      <div class="modal-head">
+        <button class="modal-x" id="mClose">✕</button>
+        <h2>${isNew ? '계좌 추가' : '계좌 수정'}</h2>
+        ${isNew ? '' : '<button class="modal-del" id="mDelete">삭제</button>'}
+      </div>
+      <div class="modal-body">
+        <label class="field"><span>계좌 이름</span>
+          <input type="text" id="fName" value="${esc(draft.name)}" placeholder="예: 연금계좌A"></label>
+        <div class="field-row">
+          <label class="field"><span>유형</span>
+            <select id="fType">
+              ${['연금', 'ISA', '증권', '적금', '기타'].map((t) => `<option ${draft.type === t ? 'selected' : ''}>${t}</option>`).join('')}
+            </select></label>
+          <label class="field"><span>자산/종목</span>
+            <input type="text" id="fAsset" value="${esc(draft.asset)}" placeholder="S&P500"></label>
+        </div>
+        <div class="field-row">
+          <label class="field"><span>시작 연도</span>
+            <input type="number" id="fStart" value="${draft.startYear}"></label>
+          <label class="field"><span>연 성장률 %</span>
+            <input type="number" id="fGrowth" value="${draft.growth}" step="0.5"></label>
+        </div>
+        <div class="field-row">
+          <label class="field"><span>시작 평가액 (원)</span>
+            <input type="number" id="fInit" value="${draft.initial}"></label>
+          <label class="field"><span>월 납입액 (원)</span>
+            <input type="number" id="fMonthly" value="${draft.monthly}"></label>
+        </div>
+        <label class="field"><span>색상</span>
+          <div class="color-row">
+            ${['#4f8cff', '#22c1a4', '#ff8c42', '#a06bff', '#ff5d73', '#3ec7ff', '#ffcb2d', '#8ce563'].map((c) =>
+              `<button class="swatch ${draft.color === c ? 'sel' : ''}" style="background:${c}" data-color="${c}"></button>`).join('')}
+          </div>
+        </label>
+
+        <div class="ov-section">
+          <div class="ov-head"><h3>연도별 변경 계획</h3>
+            <button class="ov-add" id="mAddOv">+ 추가</button></div>
+          <p class="ov-hint">특정 연도부터 월납입 변경, 또는 일시 입금/출금(음수)</p>
+          ${ovRows || '<p class="ov-empty">변경 계획 없음</p>'}
+        </div>
+
+        <div class="preview" id="mPreview"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn-primary" id="mSave">저장</button>
+      </div>`;
+
+    updatePreview();
+    bindModal();
+  }
+
+  function collect() {
+    draft.name = document.getElementById('fName').value.trim() || '새 계좌';
+    draft.type = document.getElementById('fType').value;
+    draft.asset = document.getElementById('fAsset').value.trim();
+    draft.startYear = +document.getElementById('fStart').value || DATA.settings.startYear;
+    draft.growth = parseFloat(document.getElementById('fGrowth').value) || 0;
+    draft.initial = +document.getElementById('fInit').value || 0;
+    draft.monthly = +document.getElementById('fMonthly').value || 0;
+  }
+
+  function updatePreview() {
+    const rows = projectAccount(draft, DATA.settings.startYear, DATA.settings.endYear);
+    const last = rows[rows.length - 1];
+    const retIdx = Math.max(0, Math.min(DATA.settings.retireYear - DATA.settings.startYear, rows.length - 1));
+    const pv = document.getElementById('mPreview');
+    if (pv) pv.innerHTML = `
+      <div class="pv-row"><span>은퇴(${DATA.settings.retireYear}) 예상</span><b>${won(rows[retIdx].value)}</b></div>
+      <div class="pv-row"><span>최종(${DATA.settings.endYear}) 예상</span><b>${won(last.value)}</b></div>`;
+  }
+
+  function bindModal() {
+    document.getElementById('mClose').onclick = close;
+    document.getElementById('mSave').onclick = saveAcc;
+    const del = document.getElementById('mDelete');
+    if (del) del.onclick = () => {
+      if (confirm('이 계좌를 삭제할까요?')) {
+        DATA.accounts = DATA.accounts.filter((a) => a.id !== draft.id);
+        save(); close(); render();
+      }
+    };
+    document.getElementById('mAddOv').onclick = () => {
+      collect();
+      draft.overrides = draft.overrides || [];
+      draft.overrides.push({ year: DATA.settings.startYear, monthly: null, lump: null, note: '' });
+      renderModal();
+    };
+    box.querySelectorAll('[data-color]').forEach((b) => {
+      b.onclick = () => { collect(); draft.color = b.dataset.color; renderModal(); };
+    });
+    box.querySelectorAll('[data-del]').forEach((b) => {
+      b.onclick = () => { collect(); draft.overrides.splice(+b.dataset.del, 1); renderModal(); };
+    });
+    box.querySelectorAll('[data-ov]').forEach((inp) => {
+      inp.oninput = () => {
+        const i = +inp.dataset.ov, k = inp.dataset.k;
+        const val = k === 'note' ? inp.value : (inp.value === '' ? null : +inp.value);
+        draft.overrides[i][k] = val;
+        updatePreview();
+      };
+    });
+    ['fInit', 'fMonthly', 'fGrowth', 'fStart'].forEach((id) => {
+      const e = document.getElementById(id);
+      if (e) e.oninput = () => { collect(); updatePreview(); };
+    });
+  }
+
+  function saveAcc() {
+    collect();
+    // override 정리 (연도 있는 것만)
+    draft.overrides = (draft.overrides || []).filter((o) => o.year).sort((a, b) => a.year - b.year);
+    const idx = DATA.accounts.findIndex((a) => a.id === draft.id);
+    if (idx >= 0) DATA.accounts[idx] = draft;
+    else DATA.accounts.push(draft);
+    save(); close(); render();
+    toast('저장되었습니다');
+  }
+
+  function close() { modal.remove(); }
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  renderModal();
+}
+
+/* ==========================================================================
+ * 데이터 내보내기 / 불러오기 / 초기화
+ * ========================================================================== */
+function exportData() {
+  const blob = new Blob([JSON.stringify(DATA, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `투자계획_${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+}
+
+function importData(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const d = JSON.parse(reader.result);
+      d.settings = Object.assign(seedData().settings, d.settings || {});
+      d.accounts = (d.accounts || []).map(normalizeAccount);
+      DATA = d; save(); navigate('dashboard');
+      toast('불러오기 완료');
+    } catch (e) { alert('올바른 백업 파일이 아닙니다'); }
+  };
+  reader.readAsText(file);
+}
+
+function resetData() {
+  if (confirm('초기 예시 데이터로 되돌립니다. 현재 데이터는 사라집니다.')) {
+    DATA = seedData(); save(); navigate('dashboard');
+    toast('초기화되었습니다');
+  }
+}
+
+/* ---- 뷰 바인딩 (렌더 후 이벤트 연결) ------------------------------------- */
+function bindView() {
+  const dy = document.getElementById('dashYear');
+  if (dy) dy.onchange = () => { DASH_YEAR = +dy.value; render(); };
+}
+
+/* ---- 토스트 -------------------------------------------------------------- */
+let toastTimer;
+function toast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) { t = el('<div id="toast"></div>'); document.body.appendChild(t); }
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+/* ---- 초기화 -------------------------------------------------------------- */
+function __init() {
+  document.querySelectorAll('.nav-item').forEach((b) => {
+    b.onclick = () => navigate(b.dataset.route);
+  });
+  navigate('dashboard');
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', __init);
+else __init();
+
+</script>
+</body>
+</html>
